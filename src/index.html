@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link rel="manifest" href="/manifest.webmanifest"> -->
+  <title>Hudpad</title>
+  <style media="screen">
+    body {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      padding: 0;
+      margin: 0;
+      background: #EEE;
+    }
+
+    canvas {
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #FFF;
+      width: 90vmin;
+      image-rendering: pixelated;
+      box-shadow: 0 0 5vmin 0 #CCC;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="8px" height="8px"></canvas>
+  <script src="https://cdn.jsdelivr.net/gh/LostInBrittany/launchpad-webmidi/dist/launchpad-webmidi.umd.js" charset="utf-8"></script>
+  <script src="https://gist.githack.com/amwmedia/c4a74658910fc4a0bff1ea59fd88eb9a/raw/1721a49ef92dd6bfd292587b9463a03cb78b3717/animation.js" charset="utf-8"></script>
+  <script src="/logic.js" charset="utf-8"></script>
+  <script>
+  // Check that service workers are supported
+  if ('serviceWorker' in navigator) {
+    // Use the window load event to keep the page load performant
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js');
+    });
+  }
+  </script>
+</body>
+</html>
