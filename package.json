@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html",
-    "build": "del-cli dist && parcel build src/index.html && workbox injectManifest",
+    "start": "parcel src/index.html src/sw.js",
+    "build": "del-cli dist && parcel build src/index.html src/sw.js && workbox injectManifest",
     "test": "echo \"Error: no test specified\" && exit 1",
     "workbox": "workbox"
   },
